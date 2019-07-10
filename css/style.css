@@ -195,7 +195,7 @@ img.thumbnail {
   top: calc(0.3rem + 9px);
 }
 .article .article-meta {
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.5rem;
 }
 .article .content {
   font-size: 1.1rem;
@@ -274,7 +274,7 @@ img.thumbnail {
   border: none;
 }
 .is-size-7 {
-  font-size: 0.85rem !important;
+  font-size: 0.85rem;
 }
 .is-7by1 {
   padding-top: 42.8%;
@@ -287,22 +287,22 @@ img.thumbnail {
   top: 0;
 }
 .is-overflow-x-auto {
-  overflow-x: auto !important;
+  overflow-x: auto;
 }
 .is-flex-grow {
-  flex-grow: 1 !important;
+  flex-grow: 1;
 }
 .is-flex-wrap {
-  flex-wrap: wrap !important;
+  flex-wrap: wrap;
 }
 .is-flex-start {
-  justify-content: start !important;
+  justify-content: start;
 }
 .is-flex-center {
-  justify-content: center !important;
+  justify-content: center;
 }
 .is-flex-middle {
-  align-items: center !important;
+  align-items: center;
 }
 .has-order-1 {
   order: 1;
@@ -314,13 +314,13 @@ img.thumbnail {
   order: 3;
 }
 .has-mr-6 {
-  margin-right: 0.5em !important;
+  margin-right: 0.5em;
 }
 .has-mb-6 {
-  margin-bottom: 0.5em !important;
+  margin-bottom: 0.5em;
 }
 .has-mr-7 {
-  margin-right: 0.25em !important;
+  margin-right: 0.25em;
 }
 .has-link-grey,
 .has-link-black-ter {
@@ -328,23 +328,23 @@ img.thumbnail {
 }
 .has-link-grey:hover,
 .has-link-black-ter:hover {
-  color: #3273dc !important;
+  color: #3273dc;
 }
 .has-link-grey {
-  color: #7a7a7a !important;
+  color: #7a7a7a;
 }
 .has-link-black-ter {
-  color: #242424 !important;
+  color: #242424;
 }
 @media screen and (max-width: 768px) {
   .has-text-centered-mobile {
-    text-align: center !important;
+    text-align: center;
   }
   .is-flex-center-mobile {
-    justify-content: center !important;
+    justify-content: center;
   }
   .has-mt-5-mobile {
-    margin-top: 1em !important;
+    margin-top: 1em;
   }
 }
 /* ---------------------------------
@@ -403,7 +403,7 @@ figure.highlight {
   padding: 0;
   width: 100%;
   position: relative;
-  margin: 1em 0 1em !important;
+  margin: 1em 0 1em;
 }
 figure.highlight pre,
 figure.highlight table tr:hover {
@@ -455,6 +455,7 @@ figure.highlight .section {
   vertical-align: inherit;
   min-width: inherit;
   border-radius: inherit;
+  background-color: #fffae4;
 }
 figure.highlight .copy {
   display: none;
@@ -474,7 +475,7 @@ figure.highlight:hover .copy {
   overflow-x: auto;
 }
 .table-overflow table {
-  width: auto !important;
+  width: auto;
 }
 .table-overflow table th {
   word-break: keep-all;
@@ -506,4 +507,10 @@ figure.highlight:hover .copy {
 }
 .gist .file {
   all: initial;
+}
+.section {
+  background-color: #fffae4;
+}
+.navbar {
+  background-image: url("../images/zhuti/header.jpg");
 }
