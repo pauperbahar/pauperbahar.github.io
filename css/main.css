@@ -1768,7 +1768,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #33a15e;
+  background: #ff5b59;
 }
 .feed-link,
 .chat {
@@ -2401,6 +2401,9 @@ ul.breadcrumb li+li:last-child {
     border-radius: initial;
   }
 }
+.main {
+  background-color: #d8caa8;
+}
 .main:before,
 .main:after {
   content: " ";
@@ -2484,12 +2487,7 @@ ul.breadcrumb li+li:last-child {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background: #222;
-}
-@media (max-width: 991px) {
-  .site-meta {
-    box-shadow: 0 0 16px rgba(0,0,0,0.5);
-  }
+  background: #b0cc98;
 }
 .brand {
   padding: 0;
@@ -2634,7 +2632,7 @@ ul.breadcrumb li+li:last-child {
   box-sizing: border-box;
   width: 240px;
   color: #555;
-  background: #fff;
+  background: #40627c;
   box-shadow: initial;
   border-radius: initial;
   opacity: 0;
@@ -2763,77 +2761,4 @@ ul.breadcrumb li+li:last-child {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-main {
-  background: url("https://i.loli.net/2019/07/03/5d1c7367cd2b888101.png");
-  background-attachment: scroll;
-}
-.site-meta {
-  background: url("https://i.loli.net/2019/07/03/5d1c757fa497822920.png");
-  border-bottom: 1px dashed #89725b;
-}
-.brand {
-  color: #382513;
-}
-.site-subtitle {
-  color: #382513;
-}
-.header-inner {
-  background: #bc0100;
-  background: url("https://i.loli.net/2019/07/03/5d1c757fa497822920.png");
-}
-.menu-item a {
-  color: #89725b;
-}
-.menu-item a:hover {
-  color: 8aa 276;
-}
-.menu-item-active a {
-  color: #555;
-}
-.footer,
-.footer a,
-.footer .with-love {
-  color: #31ff00;
-}
-article .post-header {
-  background: url("https://s1.ax1x.com/2018/12/20/FrDJmD.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain;
-}
-article .post-copyright {
-  background: url("https://s1.ax1x.com/2018/12/20/FrD60g.png");
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: contain;
-}
-.sidebar-inner {
-  background: url("https://s1.ax1x.com/2018/12/20/FrD1l6.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: #fbda41;
-}
-.sidebar-inner .site-overview-wrap .site-overview,
-.sidebar-inner .site-overview-wrap .site-overview .site-author-name,
-.sidebar a,
-.sidebar span.exturl,
-.site-state-item-name,
-.site-description {
-  color: #fbda41;
-}
-.sidebar-nav .sidebar-nav-active {
-  color: #fcc307;
-  border-bottom-color: #fcc307;
-}
-.sidebar-nav li {
-  color: #fbda41;
-  border-bottom-color: #fbda41;
-}
-.links-of-blogroll-list {
-  text-shadow: #f00 0 1px 0;
-}
-.post-toc ol a {
-  color: #fbda41;
 }
