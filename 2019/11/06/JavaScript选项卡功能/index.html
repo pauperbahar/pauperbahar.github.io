@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>JavaScript选项卡功能 - 鸭？鸭！</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="前端学习的4个网站本文作为一个我学习了blue大佬js视频的小笔记。 在各种网站中JavaScript的选项卡一个非常实用而且常见的的功能，笔记中会详细的记录如何实现这个功能的。">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript选项卡功能">
+<meta property="og:url" content="http://yoursite.com/2019/11/06/JavaScript选项卡功能/index.html">
+<meta property="og:site_name" content="鸭？鸭！">
+<meta property="og:description" content="前端学习的4个网站本文作为一个我学习了blue大佬js视频的小笔记。 在各种网站中JavaScript的选项卡一个非常实用而且常见的的功能，笔记中会详细的记录如何实现这个功能的。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-11-06T13:12:11.285Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript选项卡功能">
+<meta name="twitter:description" content="前端学习的4个网站本文作为一个我学习了blue大佬js视频的小笔记。 在各种网站中JavaScript的选项卡一个非常实用而且常见的的功能，笔记中会详细的记录如何实现这个功能的。">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="JavaScript选项卡功能" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">首页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/categories">分类</a>
+                
+                <a class="navbar-item" href="/tags">标签</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-06T12:16:52.000Z">2019-11-06</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 分钟 读完 (大约 1021 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                JavaScript选项卡功能
+            
+        </h1>
+        <div class="content">
+            <h3 id="前端学习的4个网站"><a href="#前端学习的4个网站" class="headerlink" title="前端学习的4个网站"></a>前端学习的4个网站</h3><p>本文作为一个我学习了blue大佬js视频的小笔记。</p>
+<p>在各种网站中JavaScript的选项卡一个非常实用而且常见的的功能，笔记中会详细的记录如何实现这个功能的。</p>
+<a id="more"></a>
+
+<h4 id="选项卡效果演示"><a href="#选项卡效果演示" class="headerlink" title="选项卡效果演示"></a>选项卡效果演示</h4><p><s>请大家原谅我不知道如何在markdown里面放置动图….</s></p>
+<p>原始效果</p>
+<img src="https://i.loli.net/2019/11/06/glLrqvdBJ7QPEI9.png">
+
+<br>
+
+<p>这个效果的结构由<strong>上面的具体月份</strong>+<strong>下面每个月的任务安排构成</strong>。</p>
+<p>想要实现的效果是当我鼠标移动到每个月份的时候，下面的任务随月份而改变，就像这样：</p>
+<p><img src="https://i.loli.net/2019/11/06/sOJBIuHlkRqLSEK.png" alt></p>
+<br>
+
+<p>当我的鼠标移入到2月份的时候，下面的任务就变成了“快乐学习”。</p>
+<p>如何使用js实现这种快速而且代码不冗杂的情况下实现这个选项卡的功能呢？请继续往下看。</p>
+<h4 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h4><p>首先放置我的html的代码。从代码可以看见，我的具体任务盒子就设置了一个，这样做的好处是不会让html的代码放置过多的盒子，使得html的代码更加容易理解和解读。</p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!--这是html--&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"study"</span>&gt;</span></span><br><span class="line">      <span class="hljs-comment">&lt;!--这是我的标题--&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>前端学习计划<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span><br><span class="line">      <span class="hljs-comment">&lt;!--这是具体的月份--&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"active"</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>1月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Jan<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>2月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Feb<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>3月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Mar<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>4月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Apr<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>5月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>May<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>6月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Jun<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>7月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Jul<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>8月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Aug<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>9月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Sept<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>10月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Oct<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>11月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Nov<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>12月<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Dec<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span><br><span class="line">      <span class="hljs-comment">&lt;!--这是放置每个月任务的盒子，这里我默认显示了1月--&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"task"</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>1月任务<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>好好学习<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="css代码"><a href="#css代码" class="headerlink" title="css代码"></a>css代码</h4><p>这是css代码，细节的朋友会发现，我 并没有在css里面设置hover属性，因为我都使用了js来完成鼠标事件。</p>
+<p>具体的配色我会在文中末尾备注，喜欢配色的朋友可以直接使用。</p>
+<figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/*这里是css代码*/</span></span><br><span class="line"><span class="hljs-comment">/*设置最外层盒子的样式*/</span></span><br><span class="line"><span class="hljs-selector-id">#study</span> &#123;</span><br><span class="line">    <span class="hljs-attribute">width</span>: <span class="hljs-number">520px</span>;</span><br><span class="line">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span> auto;</span><br><span class="line">    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fffae4</span>;</span><br><span class="line">    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">/*设置主标题的样式*/</span></span><br><span class="line"><span class="hljs-selector-tag">h2</span> &#123;</span><br><span class="line">    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#40627c</span>;</span><br><span class="line">    <span class="hljs-attribute">color</span>: <span class="hljs-number">#d0a825</span>;</span><br><span class="line">    <span class="hljs-attribute">text-align</span>: center;</span><br><span class="line">    <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;</span><br><span class="line">    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">50px</span>;</span><br><span class="line">    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">/*使下面任务盒子的标题没有外边距*/</span></span><br><span class="line"><span class="hljs-selector-tag">h4</span> &#123;</span><br><span class="line">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">/*使用flex布局，让每个月按我需要的形成3行4列*/</span></span><br><span class="line"><span class="hljs-selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="hljs-attribute">list-style</span>: none;</span><br><span class="line">    <span class="hljs-attribute">display</span>: flex;</span><br><span class="line">    <span class="hljs-attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">/*设置每个月份之间的距离和自身颜色*/</span></span><br><span class="line"><span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> &#123;</span><br><span class="line">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span>;</span><br><span class="line">    <span class="hljs-attribute">float</span>: left;</span><br><span class="line">    <span class="hljs-attribute">text-align</span>: center;</span><br><span class="line">    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid pink;</span><br><span class="line">    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;</span><br><span class="line">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;</span><br><span class="line">    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#e8e595</span>;</span><br><span class="line">    <span class="hljs-attribute">color</span>: <span class="hljs-number">#d0a825</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">/*这里是下面任务盒子的样式*/</span></span><br><span class="line"><span class="hljs-selector-id">#task</span> &#123;</span><br><span class="line">    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#e8e595</span>;</span><br><span class="line">    <span class="hljs-attribute">height</span>: <span class="hljs-number">80px</span>;</span><br><span class="line">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span> <span class="hljs-number">40px</span>;</span><br><span class="line">    <span class="hljs-attribute">color</span>: <span class="hljs-number">#40627c</span>;</span><br><span class="line">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">/*这是上面每个月份鼠标移入时候的颜色*/</span></span><br><span class="line"><span class="hljs-selector-class">.active</span> &#123;</span><br><span class="line">    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#40627c</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="js代码"><a href="#js代码" class="headerlink" title="js代码"></a>js代码</h4><p>这里是js代码，大家结合注释仔细的看就好了。</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//这里是js的代码</span></span><br><span class="line"></span><br><span class="line"> &lt;script&gt;</span><br><span class="line">   		 <span class="hljs-comment">//定义一个数据来存放每个月的任务，以后只需要修改数组内容就可以修改页面显示的任务内容了，我只定义到4月</span></span><br><span class="line">        <span class="hljs-keyword">var</span> arr = [</span><br><span class="line">            <span class="hljs-string">"好好学习～1月"</span>,</span><br><span class="line">            <span class="hljs-string">"快乐学习～2月"</span>,</span><br><span class="line">            <span class="hljs-string">"放弃学习～3月"</span>,</span><br><span class="line">          	<span class="hljs-string">".....~4月"</span></span><br><span class="line">        ];</span><br><span class="line">				<span class="hljs-comment">//这三组是把html的元素存放在我定义的变量里</span></span><br><span class="line">        <span class="hljs-keyword">var</span> oDiv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"study"</span>);</span><br><span class="line">        <span class="hljs-keyword">var</span> aLi = oDiv.getElementsByTagName(<span class="hljs-string">"li"</span>);</span><br><span class="line">        <span class="hljs-keyword">var</span> aDiv = oDiv.getElementsByTagName(<span class="hljs-string">"div"</span>)[<span class="hljs-number">0</span>];</span><br><span class="line"></span><br><span class="line">			<span class="hljs-comment">//开始循环</span></span><br><span class="line">        <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; aLi.length; i++) &#123;</span><br><span class="line">            <span class="hljs-comment">// 设置一个index来计算月份</span></span><br><span class="line">            aLi[i].index = i;</span><br><span class="line">          	<span class="hljs-comment">//鼠标移入的时候</span></span><br><span class="line">            aLi[i].onmouseover = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">                <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; aLi.length; i++) &#123;</span><br><span class="line">                  	<span class="hljs-comment">//首先清除每个html里的每个li的active类名，使他们的颜色变为默认</span></span><br><span class="line">                    aLi[i].className = <span class="hljs-string">""</span></span><br><span class="line">                &#125;</span><br><span class="line">              	<span class="hljs-comment">//给html里的每个li设置active类名，获得背景色</span></span><br><span class="line">                <span class="hljs-keyword">this</span>.className = <span class="hljs-string">"active"</span>;</span><br><span class="line">                <span class="hljs-comment">//i从0开始算，+1从1开始计算</span></span><br><span class="line">                <span class="hljs-comment">// 使用括号包裹this.index+1，数字优先相加，避免被拼接成字符串</span></span><br><span class="line">                <span class="hljs-comment">//用数组来定义每个月的任务</span></span><br><span class="line">                aDiv.innerHTML = <span class="hljs-string">"&lt;h4&gt;"</span> + (<span class="hljs-keyword">this</span>.index + <span class="hljs-number">1</span>) + <span class="hljs-string">"月任务&lt;/h4&gt;&lt;p&gt;"</span> + arr[<span class="hljs-keyword">this</span>.index] + <span class="hljs-string">"&lt;/p&gt;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;<span class="hljs-regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<hr>
+<h4 id="页面配色"><a href="#页面配色" class="headerlink" title="页面配色"></a>页面配色</h4><p>为了显示效果，我加粗了文字效果</p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th align="left">内容所属</th>
+<th>色号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><font color="#40627c"><strong>标题、任务字色与悬浮色</strong></font></td>
+<td>#40627</td>
+</tr>
+<tr>
+<td align="left"><font color="#ffae4"><strong>背景色</strong></font></td>
+<td>#ffae4</td>
+</tr>
+<tr>
+<td align="left"><font color="#d0a825"><strong>月份字体色</strong></font></td>
+<td>#d0a825</td>
+</tr>
+<tr>
+<td align="left"><font color="#e8e595"><strong>月份背景色</strong></font></td>
+<td>#e8e595</td>
+</tr>
+</tbody></table>
+<br>
+
+<p>以上就是全部的内容，感谢观看。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/JavaScript/">JavaScript</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/01/前端学习的4个网站/">
+                <span class="level-item">前端学习的4个网站</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.png" alt="长生生生">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        长生生生
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        未妨惆怅是清狂
+                    </p>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        7
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        5
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#前端学习的4个网站">
+        <span class="has-mr-6">1</span>
+        <span>前端学习的4个网站</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#选项卡效果演示">
+        <span class="has-mr-6">1.1</span>
+        <span>选项卡效果演示</span>
+        </a></li><li>
+        <a class="is-flex" href="#html代码">
+        <span class="has-mr-6">1.2</span>
+        <span>html代码</span>
+        </a></li><li>
+        <a class="is-flex" href="#css代码">
+        <span class="has-mr-6">1.3</span>
+        <span>css代码</span>
+        </a></li><li>
+        <a class="is-flex" href="#js代码">
+        <span class="has-mr-6">1.4</span>
+        <span>js代码</span>
+        </a></li><li>
+        <a class="is-flex" href="#页面配色">
+        <span class="has-mr-6">1.5</span>
+        <span>页面配色</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/笔记：中国文学/" style="font-size: 20px;">笔记：中国文学</a> <a href="/tags/笔记：西方哲学史/" style="font-size: 10px;">笔记：西方哲学史</a> <a href="/tags/网站推荐/" style="font-size: 10px;">网站推荐</a> <a href="/tags/诗词类/" style="font-size: 10px;">诗词类</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T12:16:52.000Z">2019-11-06</time></div>
+                    <a href="/2019/11/06/JavaScript选项卡功能/" class="has-link-black-ter is-size-6">JavaScript选项卡功能</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-01T01:57:52.000Z">2019-11-01</time></div>
+                    <a href="/2019/11/01/前端学习的4个网站/" class="has-link-black-ter is-size-6">前端学习的4个网站</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-02T08:16:40.000Z">2019-03-02</time></div>
+                    <a href="/2019/03/02/宋代文学（三）宋代文学大观/" class="has-link-black-ter is-size-6">宋代文学（三）宋代文学大观</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文学史/">文学史</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-26T03:45:53.000Z">2019-02-26</time></div>
+                    <a href="/2019/02/26/《长生集》/" class="has-link-black-ter is-size-6">《长生集》</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/创作/">创作</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-23T11:29:18.000Z">2019-02-23</time></div>
+                    <a href="/2019/02/23/宋代文学（二）北宋初期文学与诗文革新运动/" class="has-link-black-ter is-size-6">宋代文学（二）北宋初期文学与诗文革新运动</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/文学史/">文学史</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="JavaScript选项卡功能" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 长生&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <script src="/js/clicklove.js"></script>
+</body>
+</html>
