@@ -17,7 +17,7 @@
 <meta property="og:description" content="浮动是网络布局中常用的方法，但是使用了浮动会导致高度塌陷的问题，在这里为大家介绍5种清除浮动的方法">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-21T11:20:36.185Z">
+<meta property="og:updated_time" content="2019-11-21T11:25:42.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS浮动及其清除浮动的5种方法">
 <meta name="twitter:description" content="浮动是网络布局中常用的方法，但是使用了浮动会导致高度塌陷的问题，在这里为大家介绍5种清除浮动的方法">
@@ -145,7 +145,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    18 分钟 读完 (大约 2730 个字)
+                    18 分钟 读完 (大约 2716 个字)
                 </span>
                 
                 
@@ -220,13 +220,13 @@
 <p>在这个例子中，实际上盒子3并不是不见了，而是被盒子2给挡住了，现在我给盒子2设置一个右浮动，把下面的盒子3给显示出来。</p>
 <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.box2</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">float</span>:righ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>![image-20191121113001460](/Users/bahargul/Library/Application Support/typora-user-images/image-20191121113001460.png)</p>
+<p><img src="https://i.loli.net/2019/11/21/odsPCejLtBEnUW4.png" alt></p>
 <p>在为盒子2设置了右浮动后，盒子3重新出现在我们的视野中。</p>
 <p>那么要如何做到2个盒子（块级）并排显示呢？</p>
 <p>其实很简单，我们只需要给2个盒子都同时设置一个浮动就好：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box2,.box3&#123;</span><br><span class="line">	float:left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>![image-20191121113232310](/Users/bahargul/Library/Application Support/typora-user-images/image-20191121113232310.png)</p>
+<p><img src="https://i.loli.net/2019/11/21/MQSxzA4UhDjCibN.png" alt></p>
 <p>在为2个盒子同时设置了左浮动之后，我们可以发现，现在盒子2并没有压住盒子3，两个盒子成一个并排排列的样子。</p>
 <p>浮动固然好用，但是在网页开发中，使用了浮动还会导致一个高度塌陷的问题。</p>
 <hr>
@@ -238,7 +238,7 @@
 
 <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/*这是css代码*/</span></span><br><span class="line"><span class="hljs-selector-class">.parent</span> &#123;</span><br><span class="line">            <span class="hljs-attribute">background-color</span>: powderblue</span><br><span class="line">        &#125;</span><br><span class="line"><span class="hljs-selector-class">.demo</span>   &#123;</span><br><span class="line">  					<span class="hljs-attribute">height</span>:<span class="hljs-number">100px</span>;</span><br><span class="line">  					<span class="hljs-attribute">background-color</span>:green;</span><br><span class="line">				&#125;</span><br></pre></td></tr></table></figure>
 
-<p>![image-20191121115852995](/Users/bahargul/Library/Application Support/typora-user-images/image-20191121115852995.png)</p>
+<p><img src="https://i.loli.net/2019/11/21/ikSYcpfIEeRqgH6.png" alt></p>
 <p>下面我先让盒子2与盒子3浮动起来：</p>
 <figure class="highlight css hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-selector-class">.box2</span>,<span class="hljs-selector-class">.box3</span>&#123;</span><br><span class="line">  <span class="hljs-attribute">float</span>:left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
